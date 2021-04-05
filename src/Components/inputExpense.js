@@ -1,8 +1,22 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 
 export const InputExpense = props => {
+    const classes = useStyles();
+
     return (
-    
-        <input type="text" name="expense" placeholder="Add expense..."/>
+        <form className={classes.root} noValidate autoComplete="off">
+            <TextField id="filled-basic" name="expense" label="Add expense..." variant="filled" />
+        </form>
     );
 }
