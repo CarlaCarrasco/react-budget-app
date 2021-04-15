@@ -16,7 +16,7 @@ export const InputExpense = props => {
 
     return (
         <form className={classes.root} noValidate autoComplete="off">
-            <TextField id="filled-basic" name="expense" label="Add expense..." variant="filled" />
+            <TextField fullWidth id="filled-basic" name="expense" label="Add expense..." variant="filled" />
         </form>
     );
 }
