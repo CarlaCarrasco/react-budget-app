@@ -6,7 +6,25 @@
   height: 40vmin;
   pointer-events: none;
 }
+@media only screen and (max-width: 600px) {
 
+  .App {
+    width: 90vw;
+    margin: auto;
+   }
+
+   .makeStyles-root-1, .makeStyles-root-4 {
+    height: 150px;
+    min-width: 150px;
+  }
+
+  div.totals {
+    justify-content: space-between;
+    margin: 4vw 0;
+  }
+   
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
