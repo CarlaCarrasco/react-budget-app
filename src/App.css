@@ -1,3 +1,8 @@
+html {
+  background: #17B169E0;
+  height: 100vh; 
+  /* e1341e */
+}
 .App {
   text-align: center;
 }

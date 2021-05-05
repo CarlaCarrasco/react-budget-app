@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     root: {
       minWidth: 200,
       height: 150,
+      background: '#17B1695E'
     },
     title: {
       fontSize: 14,
