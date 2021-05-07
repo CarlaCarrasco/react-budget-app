@@ -4,11 +4,12 @@ import {Expenses} from './Components/expenses';
 import {InputExpense} from './Components/inputExpense';
 import {BudgetName} from './Components/BudgetName';
 import Paper from '@material-ui/core/Paper';
-
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 function App() {
   return (
     <div className="App">
+    {/* <div><MonetizationOnIcon /></div> */}
     <h1>Budget App</h1>
       <Paper elevation={12} style={{width: '70vw', margin: 'auto', padding: 30}}>
         <BudgetName />

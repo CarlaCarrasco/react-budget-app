@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     root: {
       minWidth: 200,
       height: 150,
-      background: '#17B1695E'
+      background: '#1BDD826B'
     },
     title: {
       fontSize: 14,
@@ -40,9 +40,9 @@ export const Budget = props => {
               {'"a benevolent smile"'}
             </Typography> */}
           </CardContent>
-          <CardActions>
+          {/* <CardActions>
             <Button size="small" style={{margin: 'auto'}}>Edit</Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
       );
     // return (

@@ -46,9 +46,9 @@ export const Expenses = props => {
               {'"a benevolent smile"'}
             </Typography> */}
           </CardContent>
-          <CardActions>
+          {/* <CardActions>
             <Button size="small" style={{margin: 'auto'}}>Edit</Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
       );
 

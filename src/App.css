@@ -1,5 +1,5 @@
 html {
-  background: #17B169E0;
+  background: #1BDD82E0;
   height: 100vh; 
   /* e1341e */
 }
@@ -19,7 +19,7 @@ html {
    }
 
    .makeStyles-root-1, .makeStyles-root-4 {
-    height: 150px;
+    height: 120px;
     min-width: 150px;
   }
 
