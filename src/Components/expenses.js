@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
       minWidth: 200,
-      height: 150,
+      height: 100,
       background: '#f6826f6e',
     },
     bullet: {
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     },
     title: {
       fontSize: 14,
+      marginBottom: 10
     },
     pos: {
       marginBottom: 12,

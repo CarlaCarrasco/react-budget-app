@@ -5,19 +5,32 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles({
     root: {
       minWidth: 200,
-      height: 150,
+      height: 100,
       background: '#1BDD826B'
     },
     title: {
       fontSize: 14,
+      marginBottom: 10,
+      marginLeft: 5
     },
     pos: {
       marginBottom: 12,
     },
+    editIcon: {
+      marginLeft: 10,
+      color: '#5f5f5f',
+      fontSize: '1rem'
+    },
+    flex: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center'
+    }
   });
 
 export const Budget = props => {
@@ -25,12 +38,15 @@ export const Budget = props => {
     return (
         <Card className={classes.root} variant="outlined">
           <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Budget
-            </Typography>
-            <Typography variant="h5" component="h2">
-              0.00
-            </Typography>
+            <div className={classes.flex}>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Budget
+              </Typography>
+              <EditIcon className={classes.editIcon}/>
+              </div>
+              <Typography variant="h5" component="h2">
+                0.00
+              </Typography>
             {/* <Typography className={classes.pos} color="textSecondary">
               adjective
             </Typography> 
