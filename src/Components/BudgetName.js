@@ -27,17 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export const BudgetName = props => {
    const classes = useStyles();
    const [edit, setEdit] = useState(false);
-   const editBudgetName = false;
-  //  const edit = () => { 
-  //   if (editBudgetName) {
-  //     editBudgetName = false;
-  //   }
-  //   else {
-  //     editBudgetName = true;
-  //   }
-
-  //   console.log(editBudgetName)
-  //  }
+   const editClicked = () => edit ? setEdit(false) : setEdit(true);
 
   // onClick h2 display none & TextFeild display
   // Onclick (again) TextFeild display none h2 display
@@ -50,16 +40,7 @@ export const BudgetName = props => {
           name="expense" label="Add expense..."
           />
           <AddIcon className={classes.editIcon} 
-            onClick={()=>{
-            if (edit) {
-              setEdit(false);
-              console.log(edit);
-            }
-            else {
-              setEdit(true);
-              console.log(edit);
-            }
-            }}/>
+            onClick={editClicked}/>
           </div>
       );
     }
@@ -68,16 +49,7 @@ export const BudgetName = props => {
           <div className={classes.flex}>
           <h2 className={classes.h2}>D.I.Y Peloton</h2>  
           <EditIcon className={classes.editIcon} 
-          onClick={()=>{
-            if (edit) {
-              setEdit(false);
-              console.log(edit);
-            }
-            else {
-              setEdit(true);
-              console.log(edit);
-            }
-          }}/>
+          onClick={editClicked}/>
         </div>
       );
     }
