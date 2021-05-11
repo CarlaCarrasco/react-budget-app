@@ -14,15 +14,18 @@ const useStyles = makeStyles({
       background: '#1BDD826B'
     },
     title: {
-      fontSize: 14,
-      marginBottom: 10,
+      fontSize: 20,
+      fontWeight: 500,
+      letterSpacing: 1,
+      marginBottom: 5,
       marginLeft: 5
     },
     pos: {
       marginBottom: 12,
     },
     editIcon: {
-      marginLeft: 10,
+      marginLeft: 5,
+      marginTop: 5,
       color: '#5f5f5f',
       fontSize: '1rem'
     },
@@ -37,16 +40,17 @@ export const Budget = props => {
     const classes = useStyles();
     return (
         <Card className={classes.root} variant="outlined">
-          <CardContent>
-            <div className={classes.flex}>
+          <CardContent>            
               <Typography className={classes.title} color="textSecondary" gutterBottom>
                 Budget
               </Typography>
-              <EditIcon className={classes.editIcon}/>
-              </div>
+              <div className={classes.flex}>
               <Typography variant="h5" component="h2">
                 0.00
               </Typography>
+              <EditIcon className={classes.editIcon}/>
+              </div>
+
             {/* <Typography className={classes.pos} color="textSecondary">
               adjective
             </Typography> 
