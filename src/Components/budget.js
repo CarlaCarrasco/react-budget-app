@@ -46,46 +46,36 @@ export const Budget = props => {
     const [editAmt, setEditAmt] = useState(false);
     const [amount, setAmount] = useState('0.00');
     const editClicked = () => editAmt ? setEditAmt(false) : setEditAmt(true);
+    const returnBudget = () => {
+      if(editAmt) {
+        return (<div className={classes.flex}>
+          <Typography className={classes.h5} variant="h5" component="h2">
+            {amount}
+          </Typography>
+          <EditIcon className={classes.editIcon}/>
+        </div>)
+      }
+      else {
+        return (<div className={classes.flex}>
+          <TextField className={classes.textField} 
+            id="standard-basic" 
+            name="expense" label="Add expense..."
+            onChange={(e) => setAmount(e.target.value)}
+            onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}}          
+          />
+          <EditIcon className={classes.editIcon}/>
+        </div>)
+      }
+    }
     return (
         <Card className={classes.root} variant="outlined">
           <CardContent>            
               <Typography className={classes.title} color="textSecondary" gutterBottom>
                 Budget
               </Typography>
-              {/* <div className={classes.flex}>
-              <Typography className={classes.h5} variant="h5" component="h2">
-                {amount}
-              </Typography>
-              <EditIcon className={classes.editIcon}/>
-              </div> */}
-              <div className={classes.flex, 'budgetBox'}>
-              <TextField className={classes.textField} 
-                id="standard-basic" 
-                name="expense" label="Add expense..."
-                onChange={(e) => setAmount(e.target.value)}
-                onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}}          
-              />
-              <EditIcon className={classes.editIcon}/>
-              </div>
-              
+              {returnBudget}
 
-            {/* <Typography className={classes.pos} color="textSecondary">
-              adjective
-            </Typography> 
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography> */}
           </CardContent>
-          {/* <CardActions>
-            <Button size="small" style={{margin: 'auto'}}>Edit</Button>
-          </CardActions> */}
         </Card>
       );
-    // return (
-    // <div>
-    //     <h2>Budget Total</h2>
-    //     <span>{props.budgetTotal}</span>
-    // </div>);
 }
