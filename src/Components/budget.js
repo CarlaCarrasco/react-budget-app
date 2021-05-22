@@ -49,21 +49,21 @@ export const Budget = props => {
     const returnBudget = () => {
       if(editAmt) {
         return (<div className={classes.flex}>
-          <Typography className={classes.h5} variant="h5" component="h2">
-            {amount}
-          </Typography>
-          <EditIcon className={classes.editIcon}/>
-        </div>)
-      }
-      else {
-        return (<div className={classes.flex}>
           <TextField className={classes.textField} 
             id="standard-basic" 
             name="expense" label="Add expense..."
             onChange={(e) => setAmount(e.target.value)}
             onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}}          
           />
-          <EditIcon className={classes.editIcon}/>
+          <EditIcon className={classes.editIcon} onClick={editClicked}/>
+        </div>)
+      }
+      else {
+        return (<div className={classes.flex}>
+          <Typography className={classes.h5} variant="h5" component="h2">
+            {amount}
+          </Typography>
+          <EditIcon className={classes.editIcon} onClick={editClicked}/>
         </div>)
       }
     }
@@ -73,8 +73,7 @@ export const Budget = props => {
               <Typography className={classes.title} color="textSecondary" gutterBottom>
                 Budget
               </Typography>
-              {returnBudget}
-
+              {returnBudget()}
           </CardContent>
         </Card>
       );
