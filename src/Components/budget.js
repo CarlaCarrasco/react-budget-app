@@ -53,7 +53,8 @@ export const Budget = props => {
             id="standard-basic" 
             name="expense" label="Add expense..."
             onChange={(e) => setAmount(e.target.value)}
-            onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}}          
+            onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}} 
+            type="number"         
           />
           <EditIcon className={classes.editIcon} onClick={editClicked}/>
         </div>)
@@ -61,7 +62,7 @@ export const Budget = props => {
       else {
         return (<div className={classes.flex}>
           <Typography className={classes.h5} variant="h5" component="h2">
-            {amount}
+            {parseFloat(amount).toFixed(2)}
           </Typography>
           <EditIcon className={classes.editIcon} onClick={editClicked}/>
         </div>)

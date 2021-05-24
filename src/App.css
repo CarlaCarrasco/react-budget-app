@@ -70,3 +70,7 @@ html {
 input  {
   width: 500px;
 }
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
