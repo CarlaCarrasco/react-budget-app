@@ -7,12 +7,17 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import EditIcon from '@material-ui/icons/Edit';
+import AddIcon from '@material-ui/icons/Add';
+
 
 const useStyles = makeStyles({
     root: {
       minWidth: 200,
       height: 100,
       background: '#1BDD826B'
+    },
+    label: {
+      
     },
     title: {
       fontSize: 20,
@@ -38,6 +43,9 @@ const useStyles = makeStyles({
     },
     h5: {
       marginLeft: 5
+    },
+    textField: {
+      marginTop: -10
     }
   });
 
@@ -56,7 +64,7 @@ export const Budget = props => {
             onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}} 
             type="number"         
           />
-          <EditIcon className={classes.editIcon} onClick={editClicked}/>
+          <AddIcon className={classes.editIcon} onClick={editClicked}/>
         </div>)
       }
       else {
