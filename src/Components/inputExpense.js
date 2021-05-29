@@ -22,11 +22,20 @@ const useStyles = makeStyles((theme) => ({
 
 export const InputExpense = props => {
     const classes = useStyles();
+    const [addExpense, setExpense] = useState([]);
 
     return (
-        <form className={classes.root} noValidate autoComplete="off">
-            <TextField fullWidth id="standard-basic" name="expense" label="Add expense..." />
+        <div className={classes.root} noValidate autoComplete="off">
+            <TextField 
+            fullWidth id="standard-basic" 
+            name="expense" label="Add expense..." 
+            onKeyPress={(e) => {
+              if(e.key === 'Enter') { 
+              setExpense(addExpense => [...addExpense, e.target.value])
+             e.value = ''}}} 
+            />
             <AddIcon className={classes.addIcon} />
-        </form>
+            {console.log(addExpense)}
+        </div>
     );
 }
