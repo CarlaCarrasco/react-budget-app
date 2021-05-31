@@ -24,15 +24,23 @@ export const InputExpense = props => {
     const classes = useStyles();
     const [addExpense, setExpense] = useState([]);
 
+
+    const submitExpense = (e) => {
+      setExpense(addExpense => [...addExpense, e]);
+
+    }
     return (
         <div className={classes.root} noValidate autoComplete="off">
             <TextField 
             fullWidth id="standard-basic" 
             name="expense" label="Add expense..." 
+            className='input-expense'
             onKeyPress={(e) => {
               if(e.key === 'Enter') { 
-              setExpense(addExpense => [...addExpense, e.target.value])
-             e.value = ''}}} 
+                let inputVal = e;
+                submitExpense(e.target.value)
+                inputVal.target.value = '';
+            }}} 
             />
             <AddIcon className={classes.addIcon} />
             {console.log(addExpense)}
