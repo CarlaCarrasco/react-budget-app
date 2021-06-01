@@ -21,11 +21,15 @@ const useStyles = makeStyles((theme) => ({
 
 export const DisplayExpense = props => {
     const {addExpense} = props;
+    const listExpense = addExpense.map((exp, i) => <li key={i}>{exp}</li>);
+
     const classes = useStyles();
 
     return (
         <div className={classes.root} noValidate autoComplete="off">
-            <p>{addExpense}</p>
+            <ul>
+                {listExpense}
+            </ul>
         </div>
     );
 }
