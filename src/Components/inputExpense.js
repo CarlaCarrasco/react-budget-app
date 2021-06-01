@@ -21,8 +21,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const InputExpense = props => {
+    const {addExpense, setExpense} = props;
     const classes = useStyles();
-    const [addExpense, setExpense] = useState([]);
+    //const [addExpense, setExpense] = useState([]);
 
 
     const submitExpense = (e) => {
