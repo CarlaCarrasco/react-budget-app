@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '500px',
+    maxWidth: '40vw',
     margin: 'auto',
     display: 'flex',
     flexDirection: 'row'
@@ -41,6 +41,18 @@ export const InputExpense = props => {
                 let inputVal = e;
                 submitExpense(e.target.value)
                 inputVal.target.value = '';
+            }}} 
+            />
+            <TextField 
+              id="standard-basic" 
+              name="expense" label="Amount" 
+              className="exp-amount"
+              type='number'
+              onKeyPress={(e) => {
+                if(e.key === 'Enter') { 
+                  let inputVal = e;
+                  submitExpense(e.target.value)
+                  inputVal.target.value = '';
             }}} 
             />
             <AddIcon className={classes.addIcon} />
