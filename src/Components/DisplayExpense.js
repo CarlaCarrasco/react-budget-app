@@ -20,9 +20,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const DisplayExpense = props => {
-    const {addExpense} = props;
+    const {addExpense, addAmount} = props;
     const listExpense = addExpense.map((exp, i) => <li key={i}>{exp}---</li>);
-
+    console.log(addExpense)
+    console.log(addAmount);
     const classes = useStyles();
 
     return (

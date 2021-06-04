@@ -22,14 +22,20 @@ const useStyles = makeStyles((theme) => ({
 
 export const InputExpense = props => {
     const {addExpense, setExpense} = props;
+    const {addAmount, setAmount} = props;
+
     const classes = useStyles();
     //const [addExpense, setExpense] = useState([]);
 
 
     const submitExpense = (e) => {
       setExpense(addExpense => [...addExpense, e]);
-
     }
+
+    const submitAmount = (e) => {
+      setAmount(addAmount => [...addAmount, e]);
+    }
+
     return (
         <div className={classes.root} noValidate autoComplete="off">
             <TextField 
@@ -39,7 +45,7 @@ export const InputExpense = props => {
             onKeyPress={(e) => {
               if(e.key === 'Enter') { 
                 let inputVal = e;
-                submitExpense(e.target.value)
+                submitExpense(e.target.value);
                 inputVal.target.value = '';
             }}} 
             />
@@ -51,12 +57,11 @@ export const InputExpense = props => {
               onKeyPress={(e) => {
                 if(e.key === 'Enter') { 
                   let inputVal = e;
-                  submitExpense(e.target.value)
+                  submitAmount(e.target.value);
                   inputVal.target.value = '';
             }}} 
             />
             <AddIcon className={classes.addIcon} />
-            {console.log(addExpense)}
         </div>
     );
 }

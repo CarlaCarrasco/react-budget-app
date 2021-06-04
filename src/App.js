@@ -11,6 +11,8 @@ import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 function App() {
 
   const [addExpense, setExpense] = useState([]);
+  const [addAmount, setAmount] = useState([]);
+
   
   return (
     <div className="App">
@@ -22,8 +24,8 @@ function App() {
           <Budget budgetTotal={200.00}/>
           <Expenses expensesTotal={100.00}/>
         </div>
-        <DisplayExpense addExpense={addExpense}/>
-        <InputExpense addExpense={addExpense} setExpense={setExpense}/>
+        <DisplayExpense addExpense={addExpense} addAmount={addAmount}/>
+        <InputExpense addExpense={addExpense} setExpense={setExpense} addAmount={addAmount} setAmount={setAmount}/>
       </Paper>
     </div>
   );
