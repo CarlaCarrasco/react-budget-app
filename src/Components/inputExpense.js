@@ -22,18 +22,22 @@ const useStyles = makeStyles((theme) => ({
 
 export const InputExpense = props => {
     const {addExpense, setExpense} = props;
-    const {addAmount, setAmount} = props;
+    const [addExp, setExp] = useState();
+    const [addAmt, setAmt] = useState();
+    //const {addAmount, setAmount} = props;
 
     const classes = useStyles();
     //const [addExpense, setExpense] = useState([]);
 
 
-    const submitExpense = (e) => {
-      setExpense(addExpense => [...addExpense, e]);
-    }
+    // const submitExpense = (e) => {
+    //   setExpense(addExpense => [...addExpense, e]);
+    // }
 
-    const submitAmount = (e) => {
-      setAmount(addAmount => [...addAmount, e]);
+    const submitAmount = () => {
+      setExpense(addExpense => [...addExpense, {expense: addExp, amount: addAmt}]);
+      console.log(addExpense);
+      //setAmount(addAmount => [...addAmount, e]);
     }
 
     return (
@@ -42,10 +46,11 @@ export const InputExpense = props => {
             fullWidth id="standard-basic" 
             name="expense" label="Add expense..." 
             className='input-expense'
+            onChange={(e) => setExp(e.target.value)}
             onKeyPress={(e) => {
               if(e.key === 'Enter') { 
                 let inputVal = e;
-                submitExpense(e.target.value);
+                //setExp(e.target.value);
                 inputVal.target.value = '';
             }}} 
             />
@@ -54,10 +59,12 @@ export const InputExpense = props => {
               name="expense" label="Amount" 
               className="exp-amount"
               type='number'
+              onChange={(e) => setAmt(e.target.value)}
               onKeyPress={(e) => {
                 if(e.key === 'Enter') { 
                   let inputVal = e;
-                  submitAmount(e.target.value);
+                  //setAmt(e.target.value)
+                  submitAmount()
                   inputVal.target.value = '';
             }}} 
             />
