@@ -26,35 +26,38 @@ const useStyles = makeStyles((theme) => ({
       border: '1px solid #7e7e7e',
       color: '#7e7e7e'
      
+  },
+  ul: {
+    minWidth: '30vw'
   }
 }));
 
 export const DisplayExpense = props => {
     const {addExpense} = props;
-    const listExpense = addExpense.map((exp, i) => <li key={i}>{exp.expense}---{exp.amount}</li>);
-    console.log(addExpense)
+    //const listExpense = addExpense.map((exp, i) => <li key={i}>{exp.expense}---{exp.amount}</li>);
+    const listExpense = addExpense.map((exp, i) => {
+
+      return (
+        <ListItem key={i}>
+          <ListItemText primary={exp.expense} secondary={exp.amount} />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="delete">
+              <DeleteIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem> 
+      );
+      
+    })
+
     //console.log(addAmount);
     const classes = useStyles();
     const [dense, setDense] = React.useState(false);
 
     return (
         <div className={classes.root} noValidate autoComplete="off">
-            {/* <ul>
+            <List dense={dense} className={classes.ul}>
                 {listExpense}
-            </ul> */}
-            <List dense={dense}>
-                <ListItem>
-                  <ListItemText
-                    primary="Expense item goes here"
-                    secondary="30.00"
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon />
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>,
-              
             </List>
         </div>
     );
