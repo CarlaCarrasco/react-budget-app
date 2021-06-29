@@ -3,13 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Avatar from '@material-ui/core/Avatar';
-import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
-import FolderIcon from '@material-ui/icons/Folder';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
@@ -34,20 +29,18 @@ const useStyles = makeStyles((theme) => ({
 
 export const DisplayExpense = props => {
     const {addExpense} = props;
-    //const listExpense = addExpense.map((exp, i) => <li key={i}>{exp.expense}---{exp.amount}</li>);
     const listExpense = addExpense.map((exp, i) => {
 
       return (
         <ListItem key={i}>
-          <ListItemText primary={exp.expense} secondary={exp.amount} />
+          <ListItemText primary={exp.expense} secondary={`$${exp.amount}`} />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete">
               <DeleteIcon />
             </IconButton>
           </ListItemSecondaryAction>
         </ListItem> 
-      );
-      
+      );      
     })
 
     //console.log(addAmount);
