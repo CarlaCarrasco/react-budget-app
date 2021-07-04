@@ -58,8 +58,8 @@ export const InputExpense = props => {
               id="standard-basic" 
               name="expense" label="Amount" 
               className="exp-amount"
-              type='number'
-              onChange={(e) => setAmt(e.target.value)}
+              type="number"
+              onChange={(e) => setAmt(parseFloat(e.target.value))}
               onKeyPress={(e) => {
                 if(e.key === 'Enter') { 
                   let inputVal = e;
