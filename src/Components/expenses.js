@@ -39,7 +39,7 @@ export const Expenses = props => {
               Expenses
             </Typography>
             <Typography variant="h5" component="h2">
-            {total}
+            {'$' + parseFloat(total).toFixed(2)}
             </Typography>
             {/* <Typography className={classes.pos} color="textSecondary">
               adjective
