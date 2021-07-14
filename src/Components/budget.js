@@ -52,7 +52,7 @@ const useStyles = makeStyles({
 export const Budget = props => {
     const classes = useStyles();
     const [editAmt, setEditAmt] = useState(false);
-    const [amount, setAmount] = useState('0.00');
+    //const [amount, setAmount] = useState('0.00');
     const editClicked = () => editAmt ? setEditAmt(false) : setEditAmt(true);
     const returnBudget = () => {
       if(editAmt) {
@@ -60,7 +60,7 @@ export const Budget = props => {
           <TextField className={classes.textField} 
             id="standard-basic" 
             name="expense" label="Add expense..."
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => props.setBudget(e.target.value)}
             onKeyPress={(e) => {if(e.key === 'Enter') editClicked()}} 
             type="number"         
           />
@@ -70,7 +70,7 @@ export const Budget = props => {
       else {
         return (<div className={classes.flex}>
           <Typography className={classes.h5} variant="h5" component="h2">
-            {parseFloat(amount).toFixed(2)}
+            {parseFloat(props.budgetTotal).toFixed(2)}
           </Typography>
           <EditIcon className={classes.editIcon} onClick={editClicked}/>
         </div>)

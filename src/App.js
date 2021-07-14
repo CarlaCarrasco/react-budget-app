@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Budget} from './Components/budget';
-import {Expenses} from './Components/expenses';
+import {Expenses} from './Components/Expenses';
+import {Balance} from './Components/Balance';
 import {InputExpense} from './Components/inputExpense';
 import {BudgetName} from './Components/BudgetName';
 import {DisplayExpense} from './Components/DisplayExpense'
@@ -11,7 +12,7 @@ import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 function App() {
 
   const [addExpense, setExpense] = useState([]); 
-  //const [addAmount, setAmount] = useState([]);
+  const [budgetTotal, setBudget] = useState('0.00');
 
   
   return (
@@ -21,8 +22,9 @@ function App() {
       <Paper elevation={12} style={{width: '70vw', margin: 'auto', padding: 30}}>
         <BudgetName />
         <div className="totals">
-          <Budget budgetTotal={200.00}/>
+          <Budget budgetTotal={budgetTotal} setBudget={setBudget}/>
           <Expenses addExpense={addExpense}/>
+          <Balance addExpense={addExpense} budgetTotal={budgetTotal}/>
         </div>
         <DisplayExpense addExpense={addExpense}/>
         <InputExpense addExpense={addExpense} setExpense={setExpense} />
