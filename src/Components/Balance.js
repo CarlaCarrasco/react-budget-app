@@ -44,24 +44,7 @@ export const Balance = props => {
             <Typography variant="h5" component="h2">
             {'$' + parseFloat(budgetTotal - total).toFixed(2)}
             </Typography>
-            {/* <Typography className={classes.pos} color="textSecondary">
-              adjective
-            </Typography> 
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography> */}
           </CardContent>
-          {/* <CardActions>
-            <Button size="small" style={{margin: 'auto'}}>Edit</Button>
-          </CardActions> */}
         </Card>
       );
-
-    // return (
-    // <div>
-    //     <h2>Expenses Total</h2>
-    //     <span>{props.expensesTotal}</span>
-    // </div>);
 }
