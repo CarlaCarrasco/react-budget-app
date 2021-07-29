@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '500px',
+    maxWidth: '400px',
     margin: 'auto',
     display: 'flex',
     flexDirection: 'row'
@@ -28,14 +28,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const DisplayExpense = props => {
-    const {addExpense} = props;
-    const listExpense = addExpense.map((exp, i) => {
+    const {addExpense, setExpense} = props;
+    const deleteExpense = (i) => {
+      addExpense.splice(i,1)
+      setExpense(addExpense => [...addExpense]);
 
+      console.log('deleted')
+      //console.log(`${i}: delete`)
+    }
+    const listExpense = addExpense.map((exp, i) => {
+    
       return (
         <ListItem key={i}>
           <ListItemText primary={exp.expense} secondary={`$${exp.amount}`} />
           <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="delete">
+            <IconButton edge="end" aria-label="delete" onClick ={() => deleteExpense(i)}>
               <DeleteIcon />
             </IconButton>
           </ListItemSecondaryAction>

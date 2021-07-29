@@ -26,7 +26,7 @@ function App() {
           <Expenses addExpense={addExpense}/>
           <Balance addExpense={addExpense} budgetTotal={budgetTotal}/>
         </div>
-        <DisplayExpense addExpense={addExpense}/>
+        <DisplayExpense addExpense={addExpense} setExpense={setExpense}/>
         <InputExpense addExpense={addExpense} setExpense={setExpense} />
       </Paper>
     </div>
