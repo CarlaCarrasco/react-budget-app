@@ -78,3 +78,7 @@ input[type=number] {
 div.exp-amount {
   margin-left: 20px
 }
+
+div.MuiInput-underline::after{
+  border-bottom: 2px solid #c5c5c59b;
+}

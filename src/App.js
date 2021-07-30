@@ -7,7 +7,8 @@ import {InputExpense} from './Components/inputExpense';
 import {BudgetName} from './Components/BudgetName';
 import {DisplayExpense} from './Components/DisplayExpense'
 import Paper from '@material-ui/core/Paper';
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'
+
 
 function App() {
 
@@ -15,11 +16,33 @@ function App() {
   const [budgetTotal, setBudget] = useState('0.00');
 
   
+  const theme = createMuiTheme({
+    overrides: {
+      MuiFormLabel: {
+        root: {
+          "&$focused": {
+            color: "#c5c5c59",
+            fontWeight: "bold"
+          }
+        }
+      }
+    //   MuiInput: {
+    //     underline: {
+    //             '&:after': {
+    //               backgroundColor: 'any_color_hex',
+    //             }
+    //       },
+    // },
+    }
+  });
+
+  
   return (
     <div className="App">
     {/* <div><MonetizationOnIcon /></div> */}
     <h1>Budget App</h1>
       <Paper elevation={12} style={{width: '70vw', margin: 'auto', padding: 30}}>
+      <ThemeProvider theme={theme}>
         <BudgetName />
         <div className="totals">
           <Budget budgetTotal={budgetTotal} setBudget={setBudget}/>
@@ -28,6 +51,8 @@ function App() {
         </div>
         <DisplayExpense addExpense={addExpense} setExpense={setExpense}/>
         <InputExpense addExpense={addExpense} setExpense={setExpense} />
+      </ThemeProvider>
+        
       </Paper>
     </div>
   );

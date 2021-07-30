@@ -32,9 +32,6 @@ export const DisplayExpense = props => {
     const deleteExpense = (i) => {
       addExpense.splice(i,1)
       setExpense(addExpense => [...addExpense]);
-
-      console.log('deleted')
-      //console.log(`${i}: delete`)
     }
     const listExpense = addExpense.map((exp, i) => {
     
