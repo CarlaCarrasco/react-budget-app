@@ -22,53 +22,37 @@ const useStyles = makeStyles((theme) => ({
 
 export const InputExpense = props => {
     const {addExpense, setExpense} = props;
-    const [addExp, setExp] = useState();
-    const [addAmt, setAmt] = useState();
-    //const {addAmount, setAmount} = props;
-
+    const [addExp, setExp] = useState('');
+    const [addAmt, setAmt] = useState('');
     const classes = useStyles();
-    //const [addExpense, setExpense] = useState([]);
-
-
-    // const submitExpense = (e) => {
-    //   setExpense(addExpense => [...addExpense, e]);
-    // }
-
-    const submitAmount = () => {
+    const submitAmount = (e) => {
       setExpense(addExpense => [...addExpense, {expense: addExp, amount: addAmt}]);
-      console.log(addExpense);
-      //setAmount(addAmount => [...addAmount, e]);
+      setAmt('');
+      setExp('');
     }
 
     return (
-        <div className={classes.root} noValidate autoComplete="off">
+        <form className={classes.root} noValidate autoComplete="off" onSubmit={submitAmount}>
             <TextField 
             fullWidth id="standard-basic" 
             name="expense" label="Add expense..." 
             className='input-expense'
+            value={addExp}
             onChange={(e) => setExp(e.target.value)}
-            onKeyPress={(e) => {
-              if(e.key === 'Enter') { 
-                let inputVal = e;
-                //setExp(e.target.value);
-                inputVal.target.value = '';
-            }}} 
             />
             <TextField 
               id="standard-basic" 
               name="expense" label="Amount" 
               className="exp-amount"
+              value={addAmt}
               type="number"
               onChange={(e) => setAmt(parseFloat(e.target.value))}
               onKeyPress={(e) => {
                 if(e.key === 'Enter') { 
-                  let inputVal = e;
-                  //setAmt(e.target.value)
-                  submitAmount()
-                  inputVal.target.value = '';
+                  submitAmount(e)
             }}} 
             />
-            <AddIcon className={classes.addIcon} />
-        </div>
+            <AddIcon type='submit' className={classes.addIcon} onClick={(e) => submitAmount(e)}/>
+        </form>
     );
 }
