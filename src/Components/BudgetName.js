@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 export const BudgetName = props => {
    const classes = useStyles();
    const [edit, setEdit] = useState(false);
-   const [name, setName] = useState('D.I.Y Peloton');
+   const [name, setName] = useState(`What is your budget for?`);
    const editClicked = () => edit ? setEdit(false) : setEdit(true);
 
     if(edit) {

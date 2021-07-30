@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,8 +12,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row'
   },
   addIcon: {
-      marginTop: '10px',
-      marginLeft: '10px',
       padding: '5px',
       border: '1px solid #7e7e7e',
       color: '#7e7e7e'
@@ -52,7 +51,9 @@ export const InputExpense = props => {
                   submitAmount(e)
             }}} 
             />
-            <AddIcon type='submit' className={classes.addIcon} onClick={(e) => submitAmount(e)}/>
+            <IconButton>
+              <AddIcon className={classes.addIcon} type='submit' onClick={(e) => submitAmount(e)}/>
+            </IconButton>
         </form>
     );
 }
