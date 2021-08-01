@@ -51,8 +51,8 @@ export const InputExpense = props => {
                   submitAmount(e)
             }}} 
             />
-            <IconButton>
-              <AddIcon className={classes.addIcon} type='submit' onClick={(e) => submitAmount(e)}/>
+            <IconButton onClick={(e) => submitAmount(e)}>
+              <AddIcon className={classes.addIcon} type='submit'/>
             </IconButton>
         </form>
     );
