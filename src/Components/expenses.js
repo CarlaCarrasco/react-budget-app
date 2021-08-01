@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -34,7 +33,6 @@ export const Expenses = props => {
     const total = addExpense.reduce(function (accumulator, currentValue) { 
       return accumulator + currentValue.amount
     }, 0.00)
-    const bull = <span className={classes.bullet}>•</span>;
     return (
         <Card className={classes.root} variant="outlined">
           <CardContent>

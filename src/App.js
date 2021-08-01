@@ -7,7 +7,7 @@ import {InputExpense} from './Components/inputExpense';
 import {BudgetName} from './Components/BudgetName';
 import {DisplayExpense} from './Components/DisplayExpense'
 import Paper from '@material-ui/core/Paper';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 
 function App() {
