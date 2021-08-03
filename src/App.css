@@ -82,3 +82,46 @@ div.exp-amount {
 div.MuiInput-underline::after{
   border-bottom: 2px solid #c5c5c59b;
 }
+
+@media only screen and (max-width: 414px) {
+  .totals div {
+    height: 75px;
+    min-width: 75px;
+    margin: 0;
+  }
+
+  div.totals {
+    margin: 0;
+  }
+
+  .totals p, .totals h2 {
+    font-size: 16px;
+  }
+
+  div.MuiPaper-root.paper-main {
+    width: auto;
+    padding: 15px;
+  }
+
+  .totals .MuiCardContent-root {
+    padding: 10px;
+  }
+
+  ul.MuiList-root {
+    margin: auto;
+  }
+
+  form > button.submit-btn {
+    padding: 12px 0 12px 12px;
+  }
+
+  .MuiPaper-root form {
+    max-width: none;
+  }
+}
+
+.paper-main {
+  width: 70vw;
+  margin: auto;
+  padding: 30px;
+}

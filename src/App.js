@@ -41,7 +41,7 @@ function App() {
     <div className="App">
     {/* <div><MonetizationOnIcon /></div> */}
     <h1>Budget App</h1>
-      <Paper elevation={12} style={{width: '70vw', margin: 'auto', padding: 30}}>
+      <Paper elevation={12} className="paper-main">
       <ThemeProvider theme={theme}>
         <BudgetName />
         <div className="totals">

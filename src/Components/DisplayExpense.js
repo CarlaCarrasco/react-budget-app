@@ -47,7 +47,6 @@ export const DisplayExpense = props => {
       );      
     })
 
-    //console.log(addAmount);
     const classes = useStyles();
     const [dense, setDense] = React.useState(false);
 
